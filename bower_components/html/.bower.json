@@ -1,0 +1,32 @@
+{
+  "name": "html",
+  "main": "html.js",
+  "homepage": "https://github.com/anler/html",
+  "authors": [
+    "Anler Hernandez Peral <anler@anler.me>"
+  ],
+  "description": "Simple JavaScript DSL for writing html.",
+  "keywords": [
+    "dsl",
+    "html"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "1.0.0",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.0",
+    "commit": "0cc6f4462911553351b1a4c91d61b5b2a127a149"
+  },
+  "_source": "https://github.com/anler/html.git",
+  "_target": "^1.0.0",
+  "_originalSource": "html",
+  "_direct": true
+}
