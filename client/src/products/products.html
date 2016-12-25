@@ -1,0 +1,17 @@
+<div class="container container-white">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>All Products</h4>
+    </div>
+  </div>
+  
+  <div ng-repeat="product in vm.products track by $index" class="row">
+    <div class="col-md-12">
+      <div><label>ID: </label>{{ product.id }}</div>
+      <div><label>Product Name: </label>{{ product.name }}</div>
+      <div><label>Description: </label>{{ product.description }}</div>
+      <div><label>Price: </label>{{ product.price }}</div>
+      <div><label>IsAvaiable : </label>{{ product.active }}</div>
+    </div>
+  </div>
+</div>

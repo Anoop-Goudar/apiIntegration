@@ -10,6 +10,9 @@
     .when('/register', {
       template: '<register></register>'
     })
+    .when('/products', {
+      template: '<products></products>'
+    })
     .otherwise({
       redirectTo: '/dashboard'
     });

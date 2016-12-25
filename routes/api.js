@@ -44,4 +44,22 @@ router.post('/user/login', function(req, res, next) {
   });
 });
 
+/* Fetch all products. */
+router.post('/products', function(req, res, next) {
+  var auth = req.body;
+  auth.app_key = app_key;
+  auth.app_secret = app_secret;
+  request.post(baseUrl + 'api/v1/product/public/list', {form: auth}, function(err, httpResponse, body) {
+    if (err) {
+      console.log(err);
+      res.send(err);
+      return;
+    }
+
+    // console.log(httpResponse.body);
+    console.log(body);
+    res.send(body);
+  });
+});
+
 module.exports = router;

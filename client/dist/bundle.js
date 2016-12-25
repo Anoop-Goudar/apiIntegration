@@ -6,6 +6,8 @@
       template: '<dashboard></dashboard>'
     }).when('/register', {
       template: '<register></register>'
+    }).when('/products', {
+      template: '<products></products>'
     }).otherwise({
       redirectTo: '/dashboard'
     });
@@ -45,6 +47,31 @@
     $rootScope.$on('$routeChangeSuccess', function (e, current, pre) {
       vm.menu = $location.path().slice(1);
     });
+  }
+})();
+'use strict';
+
+(function () {
+  angular.module('app').component('products', {
+    templateUrl: 'products/products.html',
+    controller: ProductsController,
+    controllerAs: 'vm'
+  });
+
+  ProductsController.$inject = ['LoggedinUserService', 'ProductsService'];
+
+  function ProductsController(LoggedinUserService, ProductsService) {
+    var vm = this;
+    vm.user = {};
+    vm.products = {};
+    vm.user = LoggedinUserService.get();
+    ProductsService.getProducts(vm.user.access_token).then(successHandler);
+
+    function successHandler(response) {
+      var data = response.data.split('data":')[1];
+      vm.products = data.slice(0, data.length - 1);
+      vm.products = JSON.parse(vm.products);
+    }
   }
 })();
 'use strict';
@@ -123,6 +150,41 @@
 //   }
 //
 // });
+'use strict';
+
+(function () {
+  'use strict';
+
+  angular.module('app').factory('ProductsService', ProductsService);
+
+  ProductsService.$inject = ['$http'];
+
+  function ProductsService($http) {
+    var svc = {};
+    svc.getProducts = getProducts;
+
+    return svc;
+
+    // //////////
+
+    function getProducts(access_token) {
+      var auth = {};
+      console.log(access_token);
+      auth.access_token = access_token;
+      return $http.post('/api/v1/products', auth).then(successHandler, errorHandler);
+    }
+
+    function successHandler(response) {
+      console.log('products are...');
+      console.log(response);
+      return response;
+    }
+
+    function errorHandler(error) {
+      console.log(error);
+    }
+  }
+})();
 'use strict';
 
 (function () {
