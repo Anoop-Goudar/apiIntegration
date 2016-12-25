@@ -2,8 +2,31 @@
         <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
         	<div class="panel panel-default">
-        		<div class="panel-heading">
-			    		<h3 class="panel-title">Please fill the below details</h3>
+        		<div class="panel-heading landing">
+              <div class="row">
+                <h4 class="panel-title"> Already a member ? </h4>
+              </div>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <div class="form-group">
+                    <input ng-model="vm.email" type="text" class="form-control input-sm" placeholder="Email ID">
+                  </div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <div class="form-group">
+                    <input ng-model="vm.password" type="text" class="form-control input-sm" placeholder="Password">
+                  </div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <div class="form-group">
+                    <button ng-click="vm.register()" class="btn btn-info btn-block">Login</button>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <h4 class="panel-title"> Not a member yet ? </h4>
+              </div>
+			    		<p>Please fill the below details & register</p>
 			 			</div>
 			 			<div class="panel-body">
 			    		<form role="form">
