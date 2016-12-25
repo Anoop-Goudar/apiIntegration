@@ -6,9 +6,15 @@
     controllerAs: 'vm'
   });
 
-  RegisterController.$inject = ['$rootScope', '$location'];
+  RegisterController.$inject = ['$rootScope', '$location', 'RegisterService'];
 
-  function RegisterController($rootScope, $location) {
+  function RegisterController($rootScope, $location, RegisterService) {
     const vm = this;
+    vm.user = {};
+    vm.register = register;
+
+    function register() {
+      RegisterService.registerUser(vm.user);
+    }
   }
 })();
