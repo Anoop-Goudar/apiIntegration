@@ -17,14 +17,11 @@
 
       function getProducts(access_token) {
         var auth = {};
-        console.log(access_token);
         auth.access_token = access_token;
         return $http.post('/api/v1/products', auth).then(successHandler, errorHandler);
       }
 
       function successHandler(response) {
-        console.log('products are...');
-        console.log(response);
         return response;
       }
 

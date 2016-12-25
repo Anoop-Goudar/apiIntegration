@@ -38,8 +38,6 @@ router.post('/user/login', function(req, res, next) {
       res.send(err);
       return;
     }
-
-    console.log(httpResponse.body);
     res.send(httpResponse.body);
   });
 });
@@ -55,9 +53,6 @@ router.post('/products', function(req, res, next) {
       res.send(err);
       return;
     }
-
-    // console.log(httpResponse.body);
-    console.log(body);
     res.send(body);
   });
 });
