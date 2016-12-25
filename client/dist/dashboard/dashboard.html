@@ -1,4 +1,8 @@
 <div class="container">
-  <h1>Hello world !!</h1>
-  <p>{{ vm.user.first_name }}</p>
+  <div ng-if="!!vm.user.first_name">
+    <h1>Hello {{ vm.user.first_name }} !!</h1>
+  </div>
+  <div ng-if="!vm.user.first_name">
+    <h1>Hello Buddy, Please Login to view all the Products !!</h1>
+  </div>
 </div>
