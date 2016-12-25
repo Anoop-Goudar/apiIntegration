@@ -4,6 +4,8 @@
   angular.module('app', ['ngRoute']).config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider.when('/dashboard', {
       template: '<dashboard></dashboard>'
+    }).when('/register', {
+      template: '<register></register>'
     }).otherwise({
       redirectTo: '/dashboard'
     });
@@ -42,5 +44,20 @@
     $rootScope.$on('$routeChangeSuccess', function (e, current, pre) {
       vm.menu = $location.path().slice(1);
     });
+  }
+})();
+'use strict';
+
+(function () {
+  angular.module('app').component('register', {
+    templateUrl: 'register/register.html',
+    controller: RegisterController,
+    controllerAs: 'vm'
+  });
+
+  RegisterController.$inject = ['$rootScope', '$location'];
+
+  function RegisterController($rootScope, $location) {
+    var vm = this;
   }
 })();
