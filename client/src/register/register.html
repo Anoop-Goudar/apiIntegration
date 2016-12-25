@@ -9,17 +9,17 @@
               <div class="row">
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <div class="form-group">
-                    <input ng-model="vm.email" type="text" class="form-control input-sm" placeholder="Email ID">
+                    <input ng-model="vm.existingUser.email" type="text" class="form-control input-sm" placeholder="Email ID">
                   </div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <div class="form-group">
-                    <input ng-model="vm.password" type="text" class="form-control input-sm" placeholder="Password">
+                    <input ng-model="vm.existingUser.password" type="text" class="form-control input-sm" placeholder="Password">
                   </div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <div class="form-group">
-                    <button ng-click="vm.register()" class="btn btn-info btn-block">Login</button>
+                    <button ng-click="vm.login()" class="btn btn-info btn-block">Login</button>
                   </div>
                 </div>
               </div>

@@ -8,10 +8,10 @@
     controllerAs: 'vm'
   });
 
-  DashboardController.$inject = [];
+  DashboardController.$inject = ['LoggedinUserService'];
 
-  function DashboardController() {
-    const vm = this;
-
+  function DashboardController(LoggedinUserService) {
+    var vm = this;
+    vm.user = LoggedinUserService.get();
   }
 })();
